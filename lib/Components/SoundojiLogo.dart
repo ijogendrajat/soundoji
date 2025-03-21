@@ -4,12 +4,12 @@ import 'package:soundoji/Constants/UIColors.dart';
 
 class SoundojiLogo extends StatelessWidget {
   const SoundojiLogo({
-    Key key,
-    @required double width,
-    @required uiColors colors,
+    required Key? key,
+    required double width,
+    required UIColors colors,
   }) : _colors = colors, width = width, super(key: key);
 
-  final uiColors _colors;
+  final UIColors _colors;
   final double width;
 
   @override

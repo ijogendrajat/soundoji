@@ -1,12 +1,15 @@
-
 class SoundojiObj {
-  String iconPath;
-  String soundPath;
-  String category;
+  final String iconPath;
+  final String soundPath;
+  final String category;
 
-  SoundojiObj({this.iconPath, this.soundPath, this.category});
+  const SoundojiObj({
+    required this.iconPath,
+    required this.soundPath,
+    required this.category,
+  });
 
-  static List<SoundojiObj> soundojis = [
+  static const List<SoundojiObj> soundojis = [
     SoundojiObj(
         category: 'Funny',
         soundPath: 'sounds/ios.mp3',
@@ -59,8 +62,6 @@ class SoundojiObj {
         category: 'Funny',
         soundPath: 'sounds/kiss.mp3',
         iconPath: 'assets/images/kiss.png'),
-
-
     SoundojiObj(
         category: 'Animals',
         soundPath: 'sounds/cow.mp3',
@@ -109,8 +110,6 @@ class SoundojiObj {
         category: 'Animals',
         soundPath: 'sounds/lion.mp3',
         iconPath: 'assets/images/lion.png'),
-
-
     SoundojiObj(
         category: 'Vehicles',
         soundPath: 'sounds/car.mp3',
@@ -131,9 +130,6 @@ class SoundojiObj {
         category: 'Vehicles',
         soundPath: 'sounds/rocket.mp3',
         iconPath: 'assets/images/rocket.png'),
-
-
-
     SoundojiObj(
         category: 'CenkErdem',
         soundPath: 'sounds/deranzo.wav',

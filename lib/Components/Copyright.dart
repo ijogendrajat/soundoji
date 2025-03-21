@@ -5,11 +5,11 @@ import 'LogoTitle.dart';
 
 class Copyright extends StatelessWidget {
   const Copyright({
-    Key key,
-    @required uiColors colors,
-  }) : _colors = colors, super(key: key);
+    super.key,
+    required UIColors colors,
+  }) : _colors = colors;
 
-  final uiColors _colors;
+  final UIColors _colors;
 
   @override
   Widget build(BuildContext context) {

@@ -1,29 +1,31 @@
-
 import 'package:flutter/material.dart';
 import 'package:soundoji/Constants/UIColors.dart';
 import 'package:soundoji/Models/SoundojiObj.dart';
 
-class CategoryList extends StatefulWidget{
+class CategoryList extends StatefulWidget {
   final String title;
   final List<SoundojiObj> list;
-  final Function playSound;
+  final Future<void> Function(int index, String category) playSound;
 
-  const CategoryList({Key key, this.title, this.list, this.playSound})
-      : super(key: key);
+  const CategoryList({
+    super.key,
+    required this.title,
+    required this.list,
+    required this.playSound,
+  });
 
   @override
   _CategoryListState createState() => _CategoryListState();
 }
 
-class _CategoryListState extends State<CategoryList>{
-  uiColors _colors;
+class _CategoryListState extends State<CategoryList> {
+  late final UIColors _colors;
 
   @override
   void initState() {
-    _colors = new uiColors();
     super.initState();
+    _colors = UIColors();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +75,7 @@ class _CategoryListState extends State<CategoryList>{
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: InkWell(
-                          onTap: (){
+                          onTap: () {
                             widget.playSound(index, widget.title);
                           },
                           highlightColor: Colors.transparent,
@@ -90,7 +92,7 @@ class _CategoryListState extends State<CategoryList>{
                                 color: _colors.uiYellowIconBack,
                                 boxShadow: [
                                   BoxShadow(
-                                      color: _colors.uiYellowShadow ,
+                                      color: _colors.uiYellowShadow,
                                       blurRadius: 0,
                                       offset: Offset(0, 4)),
                                 ]),
@@ -98,8 +100,7 @@ class _CategoryListState extends State<CategoryList>{
                               padding: const EdgeInsets.all(12.0),
                               child: Container(
                                 color: Colors.transparent,
-                                child: Image.asset(
-                                    widget.list[index].iconPath),
+                                child: Image.asset(widget.list[index].iconPath),
                               ),
                             ),
                           ),

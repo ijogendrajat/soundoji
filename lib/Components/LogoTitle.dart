@@ -3,21 +3,33 @@ import 'package:soundoji/Constants/UIColors.dart';
 
 class LogoTitle extends StatelessWidget {
   const LogoTitle({
-    Key key,
-    @required uiColors colors,
-  }) : _colors = colors, super(key: key);
+    super.key,
+    required UIColors colors,
+  }) : _colors = colors;
 
-  final uiColors _colors;
+  final UIColors _colors;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Soundoj', style: TextStyle(fontSize: 36, color: _colors.uiYellow, fontFamily: 'Bangers'),),
+        Text(
+          'Soundoj',
+          style: TextStyle(
+            fontSize: 36,
+            color: _colors.uiYellow,
+            fontFamily: 'Bangers',
+          ),
+        ),
         Transform.translate(
-            offset: Offset(-5,0),
-            child: Icon(Icons.music_note, size:30, color: _colors.uiYellow,)),
+          offset: const Offset(-5, 0),
+          child: Icon(
+            Icons.music_note,
+            size: 30,
+            color: _colors.uiYellow,
+          ),
+        ),
       ],
     );
   }

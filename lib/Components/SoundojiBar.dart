@@ -9,13 +9,13 @@ class SoundojiBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
 
   const SoundojiBar({
-    Key key,
-    @required this.height,
-  }) : super(key: key);
+    super.key,
+    required this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
-    uiColors _colors = new uiColors();
+    final UIColors colors = UIColors();
 
     return SafeArea(
       child: Container(
@@ -29,31 +29,31 @@ class SoundojiBar extends StatelessWidget implements PreferredSizeWidget {
               width: MediaQuery.of(context).size.width,
               height: height - 20,
               decoration: BoxDecoration(
-                  color: _colors.defaultWhite,
+                  color: colors.defaultWhite,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                        color: Color(0xfff6f6f6),
+                        color: const Color(0xfff6f6f6),
                         blurRadius: 0,
-                        offset: Offset(0, 4)),
+                        offset: const Offset(0, 4)),
                   ]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 50,
                   ),
-                  LogoTitle(colors: _colors),
+                  LogoTitle(colors: colors),
                   Padding(
                     padding: const EdgeInsets.only(right: 12.0),
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => AboutPage(),),
+                          MaterialPageRoute(builder: (context) => AboutPage()),
                         );
                       },
-                      child: Image.asset('assets/images/about.png',width: 45,)
+                      child: Image.asset('assets/images/about.png', width: 45),
                     ),
                   ),
                 ],
@@ -66,6 +66,5 @@ class SoundojiBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(height);
 }

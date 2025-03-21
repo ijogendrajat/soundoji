@@ -16,7 +16,7 @@ class AboutPage extends StatelessWidget {
     }
   }
 
-  uiColors _colors = new uiColors();
+  UIColors _colors = UIColors();
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class AboutPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SoundojiLogo(colors: _colors,width: 120,),
+                          SoundojiLogo(key: Key('soundoji_logo'), colors: _colors, width: 120,),
                           SizedBox(
                             height: 5,
                           ),
